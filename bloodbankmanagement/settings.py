@@ -138,6 +138,10 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),
 
  ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL='/afterlogin'
 
 #for contact us give your gmail id and password
