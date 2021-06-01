@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "css/mn.css" %}">
+  <title></title>
+ 
+</head>
+
+<body>
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <img src="{% static "image/i.jpg" %}" alt="Flowers in Chania">
+    
+   
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+
+      <a class="mr-5 hover:text-gray-900"  href="/" style="color: black"><b>Home</a></b>
+      <a class="mr-5 hover:text-gray-900"  href="{% url 'f1'  %}" style="color: black"><b>Blood Facts</a></b>
+      <a class="mr-5 hover:text-gray-900" href="/patient/patientlogin"  style="color: black"><b>Patient</a></b>
+      <a class="mr-5 hover:text-gray-900" href="/donor/donorlogin"  style="color: black"><b>Donor</a></b>
+      <a class="mr-5 hover:text-gray-900" href="/adminlogin"  style="color: black"><b>Admin</a></b>
+      <a class="mr-5 hover:text-gray-900" href="#carousel_32cb" style="color: black"><b>Contact Us</a></b>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
+    </nav>
+    </div>
+</header>
+
+
+</body>
+
+</html>
