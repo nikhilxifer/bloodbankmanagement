@@ -33,24 +33,6 @@ ALLOWED_HOSTS = ['127.0.0.1','bloodbankmss.herokuapp.com']
 
 # Application definition
 
-
-
-
-import dj_database_url
-
-DATABASES['default'] = dj_database_url.config()
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
-
-
-
-
-
-
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
