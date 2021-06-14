@@ -13,46 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-from bloodbankmanagement.routers.db_rrouter import search
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import LogoutView,LoginView
-
 from blood import views
-
-
-
-
-
-
-admin.site.site_header = " Nkhil Admin"
-admin.site.site_title = "Nikhil Admin Portal"
-admin.site.index_title = "Welcome to UMSRA Researcher Portal"
-
-
 urlpatterns = [
-   
     path('admin/', admin.site.urls),
-    path('donor/',include('donor.urls')),
-     path('patient/',include('patient.urls')),
-    path('sch/',include('sch.urls')),
-   
-    
-    
-   
-    path('',views.home_view,name=''),
-  
-    
-       path('signup',views.signup1,name='s1'),
-        path('facts',views.fact1,name='f1'),
-          path('tmon',views.tmon1,name='t1'),
-          path('spread',views.spread1,name='sp1'),
-         
-                 
-    path('logout', LogoutView.as_view(template_name='blood/logout.html'),name='logout'),
 
- 
+    
+    path('donor/',include('donor.urls')),
+    path('patient/',include('patient.urls')),
+
+    
+    path('',views.home_view,name=''),
+    path('logout', LogoutView.as_view(template_name='blood/logout.html'),name='logout'),
 
     path('afterlogin', views.afterlogin_view,name='afterlogin'),
     path('adminlogin', LoginView.as_view(template_name='blood/adminlogin.html'),name='adminlogin'),
@@ -71,15 +45,5 @@ urlpatterns = [
     path('admin-request-history', views.admin_request_history_view,name='admin-request-history'),
     path('update-approve-status/<int:pk>', views.update_approve_status_view,name='update-approve-status'),
     path('update-reject-status/<int:pk>', views.update_reject_status_view,name='update-reject-status'),
-    
-
-
-      
-
-
-
-
-
-    
    
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
