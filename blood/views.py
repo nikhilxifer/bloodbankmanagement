@@ -12,6 +12,12 @@ from donor import models as dmodels
 from patient import models as pmodels
 from donor import forms as dforms
 from patient import forms as pforms
+from django.contrib import messages
+from footer.models import Subs
+from sch.models import search1
+
+
+
 
 def home_view(request):
     x=models.Stock.objects.all()
@@ -246,3 +252,22 @@ def reject_donation_view(request,pk):
     donation.status='Rejected'
     donation.save()
     return HttpResponseRedirect('/admin-donation')
+
+def signup1(request):
+    return render(request,'signup/Page-1.html')
+
+def fact1(request):
+    return render(request,'facts/index.html')
+
+def tmon1(request):
+    return render(request,'tmon/Page-1.html')
+
+def spread1(request):
+    return render(request,'spread/Page-2.html')
+
+
+
+   
+
+    
+    

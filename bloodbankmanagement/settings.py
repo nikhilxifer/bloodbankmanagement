@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
+
+from django.db.models import base
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +29,7 @@ SECRET_KEY = '+zy!9k=9pql5gz9bkqjore)k6r!%w0atk(@(!(!zvp5e(t2i8n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://bloodbankmss.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'blood',
     'donor',
     'patient',
+    'footer',
+    'sch',
+    
 ]
 
 MIDDLEWARE = [
@@ -64,7 +67,7 @@ ROOT_URLCONF = 'bloodbankmanagement.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [TEMPLATE_DIR,os.path.join(BASE_DIR,'search/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,10 +87,25 @@ WSGI_APPLICATION = 'bloodbankmanagement.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': { 
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+        },
+    
+    
+    
+   
+    
+    'search': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bloodbank',
+        'USER': 'root1',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        
+        
+    },
 }
 
 
@@ -126,15 +144,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-WHITENOISE_USE_FINDERS = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
 STATIC_DIR,
  ]
 LOGIN_REDIRECT_URL='/afterlogin'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-django_heroku.settings(locals())
+
+
+DATABASE_ROUTERS = ['bloodbankmanagement.routers.db_rrouter.search']
 
 #for contact us give your gmail id and password
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'

@@ -1,74 +1,39 @@
+{% load static %}
+
 <!DOCTYPE html>
+
 
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <style type="text/css">
-    .bs-example {
-      margin: 0px;
-
-    }
-
-    .navbar-brand {
-      font-size: 20px;
-      font-family: sans-serif;
-
-    }
-  </style>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "css/mn.css" %}">
+  <title></title>
+ 
 </head>
 
 <body>
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <img src="{% static "image/i.jpg" %}" alt="Flowers in Chania">
+    
+   
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
 
-
-
-  <div class="bs-example">
-    <nav style="background-color: #FF0018;" class="navbar navbar-expand-md navbar-dark fixed-top">
-      <a href="/" class="navbar-brand"><i class="fas fa-heartbeat"></i>&nbsp; Blood Bank Management</a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-
-
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="/"><i class="fas fa-home"></i>&nbsp; Home</i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="/patient/patientlogin"><i class="fas fa-procedures"></i>&nbsp; Patient</i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="/donor/donorlogin"><i class="fas fa-user"></i>&nbsp; Donor</i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="/adminlogin"><i class="fas fa-user-shield"></i>&nbsp; Admin</i></a>
-                </li>
-                
-            </ul>
-        </div>
-
-
-
-
-      </div>
+      <a class="mr-5 hover:text-gray-900"  href="/" style="color: black"><b>Home</a></b>
+      <a class="mr-5 hover:text-gray-900"  href="{% url 'f1'  %}" style="color: black"><b>Blood Facts</a></b>
+      <a class="mr-5 hover:text-gray-900" href="/patient/patientlogin"  style="color: black"><b>Patient</a></b>
+      <a class="mr-5 hover:text-gray-900" href="/donor/donorlogin"  style="color: black"><b>Donor</a></b>
+      <a class="mr-5 hover:text-gray-900" href="/adminlogin"  style="color: black"><b>Admin</a></b>
+      <a class="mr-5 hover:text-gray-900" href="#carousel_32cb" style="color: black"><b>Contact Us</a></b>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
     </nav>
-  </div>
+    </div>
+</header>
 
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 </body>
 
 </html>
