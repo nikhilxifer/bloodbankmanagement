@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'donor',
     'patient',
     'footer',
-    'sch',
+    
     
 ]
 
@@ -96,13 +96,7 @@ DATABASES = {
     
    
     
-    'search': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bloodbank',
-        'USER': 'root1',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+  
         
         
     },
