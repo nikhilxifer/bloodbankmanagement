@@ -37,6 +37,8 @@ urlpatterns = [
     path('donor/',include('donor.urls')),
      path('patient/',include('patient.urls')),
     path('sch/',include('sch.urls')),
+    path('contact/',include('contact.urls')),
+   
    
     
     

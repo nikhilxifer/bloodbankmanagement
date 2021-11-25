@@ -13,9 +13,9 @@ from patient import models as pmodels
 from donor import forms as dforms
 from patient import forms as pforms
 from django.contrib import messages
-from footer.models import Subs
 from sch.models import search1
-
+from contact.models import Contact
+from blood.models import Subs
 
 
 
@@ -264,6 +264,15 @@ def tmon1(request):
 
 def spread1(request):
     return render(request,'spread/Page-2.html')
+
+def subs(request):
+    if request.method=="POST":
+        email = request.POST['email']
+        s =  Subs(email=email)
+        s.save()
+        print(email)
+    return render(request,'blood/index.html')
+
 
 
 

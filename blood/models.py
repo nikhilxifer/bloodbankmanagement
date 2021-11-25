@@ -21,4 +21,6 @@ class BloodRequest(models.Model):
     def __str__(self):
         return self.bloodgroup
 
+class Subs(models.Model):
+    email = models.EmailField()
         

@@ -27,7 +27,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 SECRET_KEY = '+zy!9k=9pql5gz9bkqjore)k6r!%w0atk(@(!(!zvp5e(t2i8n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,14 +46,13 @@ INSTALLED_APPS = [
     'blood',
     'donor',
     'patient',
-    'footer',
-    
+    'sch',
+    'contact'
     
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -96,7 +95,13 @@ DATABASES = {
     
    
     
-  
+    'search': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bloodbank',
+        'USER': 'root1',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
         
         
     },
